@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Razdutt Sarnaik — AI Scientist at Samsung R&D. Agentic AI and Healthcare AI."
+      content="Razdutt Sarnaik — AI Scientist. Agentic systems, mobile agents, and healthcare AI."
     />
-    <title>Razdutt Sarnaik</title>
+    <title>Razdutt Sarnaik — AI Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -20,53 +20,461 @@
     <div class="atmosphere" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="/">Razdutt Sarnaik</a>
+      <a class="brand" href="#top">Razdutt Sarnaik</a>
       <nav class="nav" aria-label="Primary">
-        <a href="https://github.com/Rajdutt999" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a
-          href="https://www.linkedin.com/in/razdutt-sarnaik-633634125/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn</a
-        >
-        <a href="mailto:rajduttsarnaik@gmail.com">Email</a>
+        <a href="#lab">Lab</a>
+        <a href="#profile">Profile</a>
+        <a href="#systems">Systems</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <p class="status"><span class="status-dot" aria-hidden="true"></span> Agentic AI · Healthcare AI</p>
     </header>
 
-    <main class="hero">
-      <div class="hero-copy">
-        <p class="brand-mark">Razdutt Sarnaik</p>
-        <h1>AI Scientist building agentic systems and healthcare intelligence.</h1>
-        <p class="lede">
-          At Samsung R&amp;D — from research and architecture to production and
-          commercialization.
-        </p>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-name">
+        <p class="hero-watermark" aria-hidden="true">Razdutt</p>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="lab-tag">AI Lab · Personal Index</p>
+            <h1 id="hero-name" class="brand-mark">Razdutt Sarnaik</h1>
+            <p class="role">AI Scientist building agentic systems and healthcare intelligence.</p>
+            <p class="lede">
+              Mobile agents, multi-model orchestration, and wearable health models
+              shipped from research to commercialization.
+            </p>
+            <div class="cta">
+              <a class="btn btn-primary" href="#systems">Inspect systems</a>
+              <a class="btn btn-ghost" href="#lab">Query the lab</a>
+            </div>
+          </div>
+
+          <div
+            class="portrait"
+            id="portrait"
+            role="img"
+            aria-label="Portrait of Razdutt Sarnaik"
+          >
+            <div class="portrait-photo" aria-hidden="true"></div>
+            <div class="portrait-shield" aria-hidden="true"></div>
+            <p class="portrait-meta" aria-hidden="true">RS · LAB SUBJECT</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section lab" id="lab" aria-labelledby="lab-title">
+        <div class="section-head">
+          <p class="lab-tag">01 · Interactive</p>
+          <h2 id="lab-title">Query the lab</h2>
+          <p class="section-lede">
+            Ask about the work — agent platforms, healthcare AI, or open source.
+          </p>
+        </div>
+
+        <div class="console" role="region" aria-label="Lab console">
+          <div class="console-log" id="console-log" aria-live="polite"></div>
+          <div class="console-prompts" id="console-prompts">
+            <button type="button" data-query="mobile-agent">What is the Android Mobile Agent?</button>
+            <button type="button" data-query="healthcare">Healthcare AI work?</button>
+            <button type="button" data-query="gsoc">GSoC / VLC?</button>
+            <button type="button" data-query="focus">Current focus?</button>
+          </div>
+          <form class="console-form" id="console-form">
+            <label class="sr-only" for="console-input">Ask a question</label>
+            <input
+              id="console-input"
+              type="text"
+              autocomplete="off"
+              placeholder="Ask about agents, healthcare, or open source…"
+            />
+            <button type="submit" class="btn btn-primary">Run</button>
+          </form>
+        </div>
+
+        <div class="profile" id="profile">
+          <div class="profile-tabs" role="tablist" aria-label="Profile sections">
+            <button type="button" role="tab" id="tab-me" aria-controls="panel-me" aria-selected="true" data-tab="me">
+              Me
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-projects"
+              aria-controls="panel-projects"
+              aria-selected="false"
+              data-tab="projects"
+              tabindex="-1"
+            >
+              Projects
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-skills"
+              aria-controls="panel-skills"
+              aria-selected="false"
+              data-tab="skills"
+              tabindex="-1"
+            >
+              Skills
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-fun"
+              aria-controls="panel-fun"
+              aria-selected="false"
+              data-tab="fun"
+              tabindex="-1"
+            >
+              Fun
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-contact"
+              aria-controls="panel-contact"
+              aria-selected="false"
+              data-tab="contact"
+              tabindex="-1"
+            >
+              Contact
+            </button>
+          </div>
+
+          <div class="profile-panels">
+            <div
+              class="profile-panel"
+              role="tabpanel"
+              id="panel-me"
+              aria-labelledby="tab-me"
+              data-panel="me"
+            >
+              <p class="lab-tag">Profile</p>
+              <h3>Hey, I&rsquo;m Razdutt</h3>
+              <p>
+                AI Scientist working on agentic systems and healthcare intelligence —
+                from research and architecture through production deployment.
+              </p>
+              <ul class="profile-facts">
+                <li><span>Education</span> B.Tech CSE, NIT Goa (CGPA 8.9)</li>
+                <li><span>Focus</span> Mobile agents · Wearable healthcare AI · Systems ML</li>
+                <li><span>Open source</span> GSoC 2022 · VideoLAN / VLC</li>
+              </ul>
+            </div>
+
+            <div
+              class="profile-panel"
+              role="tabpanel"
+              id="panel-projects"
+              aria-labelledby="tab-projects"
+              data-panel="projects"
+              hidden
+            >
+              <p class="lab-tag">Selected work</p>
+              <h3>Projects</h3>
+              <p class="panel-lede">Open a project to explore the repo or jump to the systems note.</p>
+              <ul class="project-links">
+                <li>
+                  <a href="#systems">
+                    <span class="project-name">Android Mobile Agent</span>
+                    <span class="project-desc">Agentic Android platform — orchestration, memory, 50+ tools</span>
+                    <span class="project-action">View in systems</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#systems">
+                    <span class="project-name">Snore Detection</span>
+                    <span class="project-desc">Real-time wearable snore detection · ~95% accuracy</span>
+                    <span class="project-action">View in systems</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#systems">
+                    <span class="project-name">Non-Invasive Diabetic Status Detection</span>
+                    <span class="project-desc">ECG/PPG time-series modeling · patents under process</span>
+                    <span class="project-action">View in systems</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#systems">
+                    <span class="project-name">Cycling Detection</span>
+                    <span class="project-desc">Dual-ANN activity detection · ~92% accuracy</span>
+                    <span class="project-action">View in systems</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Rajdutt999/vlc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="project-name">VLC · Google Summer of Code</span>
+                    <span class="project-desc">FFmpeg libavfilters · 18 audio filters in VLC</span>
+                    <span class="project-action">Open GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Rajdutt999/Guitar-Chords-recognition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="project-name">Guitar Chords Recognition</span>
+                    <span class="project-desc">CNN on melspectrograms for chord prediction</span>
+                    <span class="project-action">Open GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Rajdutt999/agrovision"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="project-name">Agrovision</span>
+                    <span class="project-desc">Vision project · public repository</span>
+                    <span class="project-action">Open GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Rajdutt999/SIC-XE_Assembler"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="project-name">SIC-XE Assembler</span>
+                    <span class="project-desc">Relocation, control sections, expressions</span>
+                    <span class="project-action">Open GitHub</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="profile-panel"
+              role="tabpanel"
+              id="panel-skills"
+              aria-labelledby="tab-skills"
+              data-panel="skills"
+              hidden
+            >
+              <p class="lab-tag">Capabilities</p>
+              <h3>Skills</h3>
+              <dl class="skill-grid">
+                <div>
+                  <dt>Agentic AI</dt>
+                  <dd>Orchestration · Memory · Model routing · Prompting · On-device agents</dd>
+                </div>
+                <div>
+                  <dt>Healthcare AI</dt>
+                  <dd>ECG/PPG · HRV · Biomedical signals · Wearable deployment</dd>
+                </div>
+                <div>
+                  <dt>ML / DL</dt>
+                  <dd>Computer vision · Fine-tuning · Quantization · Explainable AI</dd>
+                </div>
+                <div>
+                  <dt>Frameworks</dt>
+                  <dd>LangChain · MCP · Ollama · TensorFlow · PyTorch · TFLite · ONNX</dd>
+                </div>
+                <div>
+                  <dt>Languages</dt>
+                  <dd>Python · Kotlin · C++ · C</dd>
+                </div>
+                <div>
+                  <dt>Tools</dt>
+                  <dd>Git · OpenCV · Optuna · SHAP · LIME · MLflow</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div
+              class="profile-panel"
+              role="tabpanel"
+              id="panel-fun"
+              aria-labelledby="tab-fun"
+              data-panel="fun"
+              hidden
+            >
+              <p class="lab-tag">Off-lab</p>
+              <h3>Fun</h3>
+              <p class="panel-lede">Things that keep the rest of the system sharp.</p>
+              <ul class="fun-list">
+                <li>Calisthenics</li>
+                <li>Guitar</li>
+                <li>Biking</li>
+                <li>Cricket</li>
+                <li>Basketball</li>
+                <li>Puzzles</li>
+              </ul>
+            </div>
+
+            <div
+              class="profile-panel"
+              role="tabpanel"
+              id="panel-contact"
+              aria-labelledby="tab-contact"
+              data-panel="contact"
+              hidden
+            >
+              <p class="lab-tag">Reach out</p>
+              <h3>Contact</h3>
+              <p class="panel-lede">
+                Open to conversations on agents, healthcare AI, and production ML systems.
+              </p>
+              <div class="cta">
+                <a class="btn btn-primary" href="mailto:rajduttsarnaik@gmail.com">Email</a>
+                <a
+                  class="btn btn-ghost"
+                  href="https://www.linkedin.com/in/razdutt-sarnaik-633634125/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn</a
+                >
+                <a
+                  class="btn btn-ghost"
+                  href="https://github.com/Rajdutt999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section systems" id="systems" aria-labelledby="systems-title">
+        <div class="section-head">
+          <p class="lab-tag">02 · Systems</p>
+          <h2 id="systems-title">Systems in production</h2>
+          <p class="section-lede">
+            Platforms and products led from architecture through deployment.
+          </p>
+        </div>
+
+        <ul class="system-list">
+          <li class="system-row">
+            <div class="system-meta">
+              <span class="system-status">Active</span>
+              <span class="system-year">2025 — Present</span>
+            </div>
+            <h3>Android Mobile Agent</h3>
+            <p>
+              Android agentic AI platform — multi-agent orchestration, memory,
+              hybrid model routing across 10+ LLMs, and 50+ tools for autonomous
+              device workflows. Includes a dedicated Health Agent for health
+              summaries, reminders, and workflow automation.
+            </p>
+            <p class="system-stack">Kotlin · LangChain · MCP · Ollama · TFLite · Android</p>
+          </li>
+          <li class="system-row">
+            <div class="system-meta">
+              <span class="system-status">Shipped</span>
+              <span class="system-year">2023 — Present</span>
+            </div>
+            <h3>Snore Detection</h3>
+            <p>
+              Real-time snore detection on wearable sensors, commercialized at
+              ~95% accuracy with on-device TFLite / ONNX inference.
+            </p>
+            <p class="system-stack">PyTorch · TFLite · ONNX · Signal processing · Wearables</p>
+          </li>
+          <li class="system-row">
+            <div class="system-meta">
+              <span class="system-status">Research</span>
+              <span class="system-year">2023 — Present</span>
+            </div>
+            <h3>Non-Invasive Diabetic Status Detection</h3>
+            <p>
+              Physiological time-series modeling on smartwatch ECG and PPG for
+              non-invasive diabetic status detection, with related patents under process.
+            </p>
+            <p class="system-stack">ECG · PPG · Deep learning · Wearables</p>
+          </li>
+          <li class="system-row">
+            <div class="system-meta">
+              <span class="system-status">Shipped</span>
+              <span class="system-year">2023</span>
+            </div>
+            <h3>Cycling Detection</h3>
+            <p>
+              Dual ANN-based cycling activity detection from wearable sensor
+              streams, commercialized at ~92% accuracy for real-time tracking.
+            </p>
+            <p class="system-stack">ANN · Sensor fusion · On-device inference</p>
+          </li>
+          <li class="system-row">
+            <div class="system-meta">
+              <span class="system-status">Open source</span>
+              <span class="system-year">2022</span>
+            </div>
+            <h3>VLC · Google Summer of Code</h3>
+            <p>
+              Integrated FFmpeg libavfilters into VLC for 18 audio filters, with
+              dynamic filtering GUI and libVLC entry points — shipped with the
+              global VideoLAN community.
+            </p>
+            <p class="system-stack">C · FFmpeg · libVLC · Qt / GUI</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section research" id="research" aria-labelledby="research-title">
+        <div class="section-head">
+          <p class="lab-tag">03 · Research lanes</p>
+          <h2 id="research-title">Where the lab focuses</h2>
+        </div>
+
+        <div class="lanes">
+          <article>
+            <h3>Agentic AI</h3>
+            <p>Planning, tool use, memory, model routing, on-device agents.</p>
+          </article>
+          <article>
+            <h3>Healthcare AI</h3>
+            <p>ECG/PPG modeling, HRV, wearable inference, health agents.</p>
+          </article>
+          <article>
+            <h3>Systems ML</h3>
+            <p>Quantization, TFLite/ONNX, production pipelines, patents in process.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="section-head">
+          <p class="lab-tag">04 · Contact</p>
+          <h2 id="contact-title">Collaborate with the lab</h2>
+          <p class="section-lede">
+            Open to deep technical conversations on agents, healthcare AI, and
+            production ML systems.
+          </p>
+        </div>
         <div class="cta">
+          <a class="btn btn-primary" href="mailto:rajduttsarnaik@gmail.com">Email</a>
           <a
-            class="btn btn-primary"
+            class="btn btn-ghost"
+            href="https://www.linkedin.com/in/razdutt-sarnaik-633634125/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            class="btn btn-ghost"
             href="https://github.com/Rajdutt999"
             target="_blank"
             rel="noopener noreferrer"
-            >View work</a
+            >GitHub</a
           >
-          <a class="btn btn-ghost" href="mailto:rajduttsarnaik@gmail.com">Get in touch</a>
         </div>
-      </div>
-
-      <div
-        class="portrait"
-        id="portrait"
-        role="img"
-        aria-label="Portrait of Razdutt Sarnaik"
-      >
-        <div class="portrait-photo" aria-hidden="true"></div>
-        <div class="portrait-shield" aria-hidden="true"></div>
-      </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <span>© <span id="year"></span> Razdutt Sarnaik</span>
-      <span>rajdutt999.github.io</span>
+      <span>AI Lab · rajdutt999.github.io</span>
     </footer>
 
     <script src="script.js"></script>
