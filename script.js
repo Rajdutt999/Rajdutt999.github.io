@@ -14,7 +14,7 @@ const answers = {
   "mobile-agent":
     "The Android Mobile Agent is an Android agentic platform I architected and lead: multi-agent orchestration, planning/execution, memory systems, hybrid routing across 10+ cloud and on-device LLMs, and 50+ tools for autonomous device workflows — including a dedicated Health Agent.",
   healthcare:
-    "Healthcare projects include Snore Detection (~95% accuracy, on-device), Non-Invasive Diabetic Status Detection using smartwatch ECG/PPG, and Cycling Detection (~92% accuracy). Related patents on glycaemic index detection and PPG enhancement are under process.",
+    "Healthcare projects include Snore Detection (sleep audio + PPG, spectral attention, 95% accuracy, sleep insights), Non-Invasive Diabetic Status Detection using smartwatch ECG/PPG, and Cycling Detection (~92% accuracy). Related patents on glycaemic index detection and PPG enhancement are under process.",
   gsoc:
     "During Google Summer of Code 2022 with VideoLAN, I integrated FFmpeg libavfilters into VLC to support 18 audio filters, built a dynamic filtering GUI, and implemented libVLC backend entry points with the global open-source community.",
   focus:
