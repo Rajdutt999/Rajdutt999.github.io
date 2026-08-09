@@ -496,7 +496,8 @@ body {
 
 .profile-panel > p {
   margin: 0 0 1rem;
-  max-width: 52ch;
+  max-width: none;
+  width: 100%;
   color: var(--ink-soft);
   line-height: 1.6;
 }
@@ -529,6 +530,25 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent-deep);
+}
+
+.focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.35rem;
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  color: var(--ink-soft) !important;
+}
+
+.focus-list > span {
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  color: inherit;
 }
 
 .project-links {
