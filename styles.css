@@ -619,57 +619,323 @@ body {
   font-weight: 500;
 }
 
-.system-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.system-grid {
   display: grid;
-  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem;
 }
 
-.system-row {
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--line);
-}
-
-.system-row:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.system-meta {
+.system-card {
   display: flex;
-  gap: 0.75rem;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.system-card:hover,
+.system-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(12, 110, 102, 0.35);
+}
+
+.system-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #123038;
+}
+
+.system-card-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.system-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 2;
+  display: inline-flex;
   align-items: center;
-  margin-bottom: 0.55rem;
+  gap: 0.35rem;
+  padding: 0.35rem 0.6rem;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink-soft);
 }
 
-.system-status {
+.system-badge::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.system-badge.is-active {
   color: var(--accent-deep);
 }
 
-.system-row h3 {
-  margin: 0 0 0.55rem;
+.system-badge.is-shipped {
+  color: #1f6b4a;
+}
+
+.system-badge.is-research {
+  color: #5a4a18;
+}
+
+.system-badge.is-oss {
+  color: #314a63;
+}
+
+.system-visual {
+  position: absolute;
+  inset: 0;
+}
+
+.system-card-media[data-visual="agent"] .system-visual {
+  background:
+    radial-gradient(circle at 22% 30%, rgba(244, 251, 250, 0.35), transparent 28%),
+    radial-gradient(circle at 78% 55%, rgba(244, 251, 250, 0.22), transparent 32%),
+    linear-gradient(135deg, #0c6e66 0%, #123038 55%, #1b2430 100%);
+}
+
+.system-card-media[data-visual="agent"] .system-visual::before,
+.system-card-media[data-visual="agent"] .system-visual::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(244, 251, 250, 0.35);
+  border-radius: 50%;
+}
+
+.system-card-media[data-visual="agent"] .system-visual::before {
+  width: 7rem;
+  height: 7rem;
+  left: 18%;
+  top: 28%;
+}
+
+.system-card-media[data-visual="agent"] .system-visual::after {
+  width: 3.2rem;
+  height: 3.2rem;
+  right: 22%;
+  top: 36%;
+  background: rgba(244, 251, 250, 0.18);
+}
+
+.system-card-media[data-visual="snore"] .system-visual {
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(16, 20, 26, 0.18)),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 10px,
+      rgba(244, 251, 250, 0.08) 10px 11px
+    ),
+    linear-gradient(145deg, #245b6b 0%, #16343f 50%, #101820 100%);
+}
+
+.system-card-media[data-visual="snore"] .system-visual::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 48%;
+  height: 2px;
+  background: rgba(244, 251, 250, 0.7);
+  box-shadow:
+    0 -18px 0 -1px rgba(244, 251, 250, 0.25),
+    0 16px 0 -1px rgba(244, 251, 250, 0.25);
+  clip-path: polygon(
+    0 50%,
+    8% 50%,
+    12% 10%,
+    18% 90%,
+    24% 30%,
+    30% 70%,
+    36% 45%,
+    42% 55%,
+    50% 20%,
+    58% 80%,
+    66% 40%,
+    74% 60%,
+    82% 35%,
+    90% 55%,
+    100% 50%
+  );
+}
+
+.system-card-media[data-visual="diabetes"] .system-visual {
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(244, 251, 250, 0.2), transparent 40%),
+    linear-gradient(160deg, #2f5d4a 0%, #1a332c 45%, #121a1f 100%);
+}
+
+.system-card-media[data-visual="diabetes"] .system-visual::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 52%;
+  height: 42px;
+  background: no-repeat center / 100% 100%
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' fill='none'%3E%3Cpath d='M0 30 H60 L75 10 L95 50 L115 30 H160 L175 18 L195 42 L215 30 H400' stroke='%23f4fbfa' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  opacity: 0.85;
+}
+
+.system-card-media[data-visual="cycling"] .system-visual {
+  background:
+    linear-gradient(120deg, rgba(244, 251, 250, 0.08), transparent 40%),
+    linear-gradient(210deg, #3d5a40 0%, #243328 40%, #141c18 100%);
+}
+
+.system-card-media[data-visual="cycling"] .system-visual::before,
+.system-card-media[data-visual="cycling"] .system-visual::after {
+  content: "";
+  position: absolute;
+  border: 2px solid rgba(244, 251, 250, 0.45);
+  border-radius: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  top: 38%;
+}
+
+.system-card-media[data-visual="cycling"] .system-visual::before {
+  left: 24%;
+}
+
+.system-card-media[data-visual="cycling"] .system-visual::after {
+  right: 24%;
+}
+
+.system-card-media[data-visual="vlc"] .system-visual {
+  background:
+    radial-gradient(circle at 50% 120%, rgba(244, 251, 250, 0.16), transparent 45%),
+    linear-gradient(150deg, #4a2f1f 0%, #2a1c16 45%, #141210 100%);
+}
+
+.system-card-media[data-visual="vlc"] .system-visual::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-35%, -50%);
+  border-style: solid;
+  border-width: 1.4rem 0 1.4rem 2.3rem;
+  border-color: transparent transparent transparent rgba(244, 251, 250, 0.85);
+}
+
+.system-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.15rem 1.15rem 1.25rem;
+  flex: 1;
+}
+
+.system-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.system-card-head h3 {
+  margin: 0;
   font-family: var(--font-body);
-  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  font-size: 1.2rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 
-.system-row p {
-  margin: 0 0 0.7rem;
-  max-width: 58ch;
+.system-card-icon {
+  flex-shrink: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
   color: var(--ink-soft);
-  line-height: 1.6;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
-.system-stack {
+.system-card-icon:hover,
+.system-card-icon:focus-visible {
+  color: var(--accent-deep);
+  border-color: rgba(12, 110, 102, 0.45);
+  background: var(--accent-glow);
+}
+
+.system-card-body > p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.system-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.system-tags li {
+  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem !important;
-  color: var(--ink-faint) !important;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  background: rgba(243, 245, 247, 0.9);
+}
+
+.system-card-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--accent-deep);
+  border-top: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.system-card-link:hover,
+.system-card-link:focus-visible {
+  border-top-color: rgba(12, 110, 102, 0.35);
 }
 
 .lanes {
@@ -738,14 +1004,17 @@ body {
   .hero-grid,
   .section,
   .portrait-photo,
-  .status-dot {
+  .status-dot,
+  .system-card {
     animation: none;
     opacity: 1;
     transform: none;
   }
 
   .btn:hover,
-  .btn:focus-visible {
+  .btn:focus-visible,
+  .system-card:hover,
+  .system-card:focus-within {
     transform: none;
   }
 }
@@ -761,6 +1030,10 @@ body {
   }
 
   .lanes {
+    grid-template-columns: 1fr;
+  }
+
+  .system-grid {
     grid-template-columns: 1fr;
   }
 

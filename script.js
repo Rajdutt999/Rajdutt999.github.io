@@ -109,7 +109,7 @@ tabs.forEach((tab, index) => {
   });
 });
 
-document.querySelectorAll('.project-links a[href^="#"]').forEach((link) => {
+document.querySelectorAll('.project-links a[href^="#"], .system-card-link[href="#profile"], .system-card-icon[href="#profile"]').forEach((link) => {
   link.addEventListener("click", () => {
     const projectsTab = document.getElementById("tab-projects");
     if (projectsTab) activateTab(projectsTab);

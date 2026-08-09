@@ -354,71 +354,176 @@
           </p>
         </div>
 
-        <ul class="system-list">
-          <li class="system-row">
-            <div class="system-meta">
-              <span class="system-status">Active</span>
-              <span class="system-year">2025 — Present</span>
+        <div class="system-grid">
+          <article class="system-card">
+            <div class="system-card-media" data-visual="agent">
+              <span class="system-badge is-active">Active</span>
+              <img
+                class="system-card-photo"
+                src="assets/systems/android-mobile-agent.png"
+                alt="Android Mobile Agent architecture diagram"
+                width="1312"
+                height="816"
+              />
             </div>
-            <h3>Android Mobile Agent</h3>
-            <p>
-              Android agentic AI platform — multi-agent orchestration, memory,
-              hybrid model routing across 10+ LLMs, and 50+ tools for autonomous
-              device workflows. Includes a dedicated Health Agent for health
-              summaries, reminders, and workflow automation.
-            </p>
-            <p class="system-stack">Kotlin · LangChain · MCP · Ollama · TFLite · Android</p>
-          </li>
-          <li class="system-row">
-            <div class="system-meta">
-              <span class="system-status">Shipped</span>
-              <span class="system-year">2023 — Present</span>
+            <div class="system-card-body">
+              <div class="system-card-head">
+                <h3>Android Mobile Agent</h3>
+                <a
+                  class="system-card-icon"
+                  href="#profile"
+                  aria-label="Open Android Mobile Agent overview"
+                  >↗</a
+                >
+              </div>
+              <p>
+                Agentic Android platform — multi-agent orchestration, memory,
+                hybrid model routing across 10+ LLMs, and 50+ tools for autonomous
+                device workflows, including a dedicated Health Agent.
+              </p>
+              <ul class="system-tags">
+                <li>Kotlin</li>
+                <li>LangChain</li>
+                <li>MCP</li>
+                <li>Ollama</li>
+                <li>TFLite</li>
+                <li>Android</li>
+              </ul>
+              <a class="system-card-link" href="#profile">View overview</a>
             </div>
-            <h3>Snore Detection</h3>
-            <p>
-              Real-time snore detection on wearable sensors, commercialized at
-              ~95% accuracy with on-device TFLite / ONNX inference.
-            </p>
-            <p class="system-stack">PyTorch · TFLite · ONNX · Signal processing · Wearables</p>
-          </li>
-          <li class="system-row">
-            <div class="system-meta">
-              <span class="system-status">Research</span>
-              <span class="system-year">2023 — Present</span>
+          </article>
+
+          <article class="system-card">
+            <div class="system-card-media" data-visual="snore">
+              <span class="system-badge is-shipped">Shipped</span>
+              <img
+                class="system-card-photo"
+                src="assets/systems/snore-detection.png"
+                alt="Snore Detection pipeline: sleep, audio signal, mel spectrogram, CNN"
+                width="1312"
+                height="816"
+              />
             </div>
-            <h3>Non-Invasive Diabetic Status Detection</h3>
-            <p>
-              Physiological time-series modeling on smartwatch ECG and PPG for
-              non-invasive diabetic status detection, with related patents under process.
-            </p>
-            <p class="system-stack">ECG · PPG · Deep learning · Wearables</p>
-          </li>
-          <li class="system-row">
-            <div class="system-meta">
-              <span class="system-status">Shipped</span>
-              <span class="system-year">2023</span>
+            <div class="system-card-body">
+              <div class="system-card-head">
+                <h3>Snore Detection</h3>
+                <a
+                  class="system-card-icon"
+                  href="#profile"
+                  aria-label="Open Snore Detection overview"
+                  >↗</a
+                >
+              </div>
+              <p>
+                Real-time snore detection on wearable sensors, commercialized at
+                ~95% accuracy with on-device TFLite / ONNX inference.
+              </p>
+              <ul class="system-tags">
+                <li>PyTorch</li>
+                <li>TFLite</li>
+                <li>ONNX</li>
+                <li>Signal processing</li>
+                <li>Wearables</li>
+              </ul>
+              <a class="system-card-link" href="#profile">View overview</a>
             </div>
-            <h3>Cycling Detection</h3>
-            <p>
-              Dual ANN-based cycling activity detection from wearable sensor
-              streams, commercialized at ~92% accuracy for real-time tracking.
-            </p>
-            <p class="system-stack">ANN · Sensor fusion · On-device inference</p>
-          </li>
-          <li class="system-row">
-            <div class="system-meta">
-              <span class="system-status">Open source</span>
-              <span class="system-year">2022</span>
+          </article>
+
+          <article class="system-card">
+            <div class="system-card-media" data-visual="diabetes">
+              <span class="system-badge is-research">Research</span>
+              <div class="system-visual" aria-hidden="true"></div>
             </div>
-            <h3>VLC · Google Summer of Code</h3>
-            <p>
-              Integrated FFmpeg libavfilters into VLC for 18 audio filters, with
-              dynamic filtering GUI and libVLC entry points — shipped with the
-              global VideoLAN community.
-            </p>
-            <p class="system-stack">C · FFmpeg · libVLC · Qt / GUI</p>
-          </li>
-        </ul>
+            <div class="system-card-body">
+              <div class="system-card-head">
+                <h3>Non-Invasive Diabetic Status Detection</h3>
+                <a
+                  class="system-card-icon"
+                  href="#profile"
+                  aria-label="Open diabetic status detection overview"
+                  >↗</a
+                >
+              </div>
+              <p>
+                Physiological time-series modeling on smartwatch ECG and PPG for
+                non-invasive diabetic status detection, with related patents under process.
+              </p>
+              <ul class="system-tags">
+                <li>ECG</li>
+                <li>PPG</li>
+                <li>Deep learning</li>
+                <li>Wearables</li>
+              </ul>
+              <a class="system-card-link" href="#profile">View overview</a>
+            </div>
+          </article>
+
+          <article class="system-card">
+            <div class="system-card-media" data-visual="cycling">
+              <span class="system-badge is-shipped">Shipped</span>
+              <div class="system-visual" aria-hidden="true"></div>
+            </div>
+            <div class="system-card-body">
+              <div class="system-card-head">
+                <h3>Cycling Detection</h3>
+                <a
+                  class="system-card-icon"
+                  href="#profile"
+                  aria-label="Open Cycling Detection overview"
+                  >↗</a
+                >
+              </div>
+              <p>
+                Dual ANN-based cycling activity detection from wearable sensor
+                streams, commercialized at ~92% accuracy for real-time tracking.
+              </p>
+              <ul class="system-tags">
+                <li>ANN</li>
+                <li>Sensor fusion</li>
+                <li>On-device inference</li>
+              </ul>
+              <a class="system-card-link" href="#profile">View overview</a>
+            </div>
+          </article>
+
+          <article class="system-card">
+            <div class="system-card-media" data-visual="vlc">
+              <span class="system-badge is-oss">Open source</span>
+              <div class="system-visual" aria-hidden="true"></div>
+            </div>
+            <div class="system-card-body">
+              <div class="system-card-head">
+                <h3>VLC · Google Summer of Code</h3>
+                <a
+                  class="system-card-icon"
+                  href="https://github.com/Rajdutt999/vlc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open VLC project on GitHub"
+                  >↗</a
+                >
+              </div>
+              <p>
+                Integrated FFmpeg libavfilters into VLC for 18 audio filters, with
+                dynamic filtering GUI and libVLC entry points — shipped with the
+                global VideoLAN community.
+              </p>
+              <ul class="system-tags">
+                <li>C</li>
+                <li>FFmpeg</li>
+                <li>libVLC</li>
+                <li>Qt / GUI</li>
+              </ul>
+              <a
+                class="system-card-link"
+                href="https://github.com/Rajdutt999/vlc"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open GitHub</a
+              >
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="section research" id="research" aria-labelledby="research-title">
