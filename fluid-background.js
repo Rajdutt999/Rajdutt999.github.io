@@ -169,8 +169,6 @@
     height = Math.floor(window.innerHeight * dpr);
     canvas.width = width;
     canvas.height = height;
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
     gl.viewport(0, 0, width, height);
     gl.uniform2f(uniforms.resolution, width, height);
     gl.uniform1f(uniforms.aspect, width / height);
