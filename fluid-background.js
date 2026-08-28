@@ -1,17 +1,23 @@
 (() => {
-  const canvas = document.getElementById("fluid-bg");
-  if (!canvas) return;
-
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const prefersMobile = window.matchMedia("(max-width: 768px)").matches;
 
   if (prefersReducedMotion) return;
 
+  const canvas = document.createElement("canvas");
+  canvas.id = "fluid-bg";
+  canvas.className = "fluid-bg";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.appendChild(canvas);
+
   const gl =
     canvas.getContext("webgl", { alpha: false, antialias: false, powerPreference: "low-power" }) ||
     canvas.getContext("experimental-webgl");
 
-  if (!gl) return;
+  if (!gl) {
+    canvas.remove();
+    return;
+  }
 
   document.body.classList.add("fluid-bg-active");
 
@@ -117,6 +123,7 @@
   const fragShader = compileShader(gl.FRAGMENT_SHADER, fragSource);
   if (!vertShader || !fragShader) {
     document.body.classList.remove("fluid-bg-active");
+    canvas.remove();
     return;
   }
 
@@ -128,6 +135,7 @@
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
     console.warn("Fluid background program error:", gl.getProgramInfoLog(program));
     document.body.classList.remove("fluid-bg-active");
+    canvas.remove();
     return;
   }
 
@@ -165,10 +173,17 @@
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, prefersMobile ? 1.25 : 2);
-    width = Math.floor(window.innerWidth * dpr);
-    height = Math.floor(window.innerHeight * dpr);
+    const displayW = window.innerWidth;
+    const displayH = window.innerHeight;
+
+    canvas.style.width = `${displayW}px`;
+    canvas.style.height = `${displayH}px`;
+
+    width = Math.floor(displayW * dpr);
+    height = Math.floor(displayH * dpr);
     canvas.width = width;
     canvas.height = height;
+
     gl.viewport(0, 0, width, height);
     gl.uniform2f(uniforms.resolution, width, height);
     gl.uniform1f(uniforms.aspect, width / height);
@@ -178,6 +193,7 @@
   window.addEventListener(
     "pointermove",
     (event) => {
+      if (!width || !height) return;
       setPointer(event.clientX * (width / window.innerWidth), event.clientY * (height / window.innerHeight));
     },
     { passive: true }
@@ -185,7 +201,7 @@
   window.addEventListener(
     "touchmove",
     (event) => {
-      if (!event.touches[0]) return;
+      if (!event.touches[0] || !width || !height) return;
       const touch = event.touches[0];
       setPointer(touch.clientX * (width / window.innerWidth), touch.clientY * (height / window.innerHeight));
     },
