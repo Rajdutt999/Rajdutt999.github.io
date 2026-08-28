@@ -217,16 +217,41 @@ main,
 .hero-grid {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.75fr);
-  gap: clamp(1.75rem, 5vw, 3.5rem);
-  align-items: center;
   max-width: 72rem;
   width: 100%;
   margin: 0 auto;
   opacity: 0;
   transform: translateY(1.1rem);
   animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+}
+
+.hero-copy {
+  max-width: 42rem;
+}
+
+.hero-identity {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.15rem, 3.5vw, 1.85rem);
+  margin-bottom: 1.25rem;
+}
+
+.hero-intro {
+  min-width: 0;
+  flex: 1;
+}
+
+.hero-intro .lab-tag {
+  margin-bottom: 0.55rem;
+}
+
+.hero-intro .brand-mark {
+  margin-bottom: 0.65rem;
+}
+
+.hero-intro .role {
+  margin-bottom: 0;
+  max-width: none;
 }
 
 .lab-tag {
@@ -320,11 +345,11 @@ main,
 
 .portrait {
   position: relative;
-  width: min(100%, 24rem);
-  max-width: 100%;
-  aspect-ratio: 4 / 5;
-  margin-inline: auto;
+  flex-shrink: 0;
+  width: clamp(5.25rem, 14vw, 7.25rem);
+  aspect-ratio: 1;
   overflow: hidden;
+  border-radius: 1.15rem;
   box-shadow: var(--shadow), var(--shadow-glow);
   border: 1px solid var(--accent-border);
   user-select: none;
@@ -338,10 +363,10 @@ main,
   inset: 0;
   background-image: url("assets/portrait.jpg");
   background-size: cover;
-  background-position: center 18%;
+  background-position: center 20%;
   background-repeat: no-repeat;
   pointer-events: none;
-  transform: scale(1.02);
+  transform: scale(1.08);
   animation: settle 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
 }
 
@@ -351,24 +376,11 @@ main,
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(16, 20, 26, 0.05) 0%,
-    transparent 40%,
-    rgba(16, 20, 26, 0.18) 100%
+    rgba(10, 14, 20, 0.08) 0%,
+    transparent 45%,
+    rgba(10, 14, 20, 0.22) 100%
   );
   cursor: default;
-}
-
-.portrait-meta {
-  position: absolute;
-  left: 0.75rem;
-  bottom: 0.65rem;
-  z-index: 2;
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  color: rgba(244, 251, 250, 0.85);
-  pointer-events: none;
 }
 
 .section {
@@ -1119,11 +1131,11 @@ main,
 @keyframes settle {
   from {
     opacity: 0;
-    transform: scale(1.06);
+    transform: scale(1.14);
   }
   to {
     opacity: 1;
-    transform: scale(1.02);
+    transform: scale(1.08);
   }
 }
 
@@ -1161,15 +1173,6 @@ main,
 }
 
 @media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portrait {
-    width: min(100%, 20rem);
-    order: -1;
-  }
-
   .lanes {
     grid-template-columns: 1fr;
   }
@@ -1200,6 +1203,15 @@ main,
 @media (max-width: 640px) {
   .site-header {
     align-items: flex-start;
+  }
+
+  .hero-identity {
+    align-items: flex-start;
+  }
+
+  .portrait {
+    width: 4.75rem;
+    border-radius: 1rem;
   }
 
   .console-form {
