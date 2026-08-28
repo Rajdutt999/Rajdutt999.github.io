@@ -1,6 +1,7 @@
 :root {
   --ink: #e8edf2;
   --ink-soft: #9aa5b4;
+  --ink-mid: #c4ced8;
   --ink-faint: #6b7785;
   --ink-on-accent: #041015;
   --paper: #0a0e14;
@@ -697,7 +698,7 @@ main,
   min-width: 0;
   padding: 1rem 1.05rem 1.1rem;
   border: 1px solid var(--line);
-  background: var(--surface-strong);
+  background: var(--surface);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(8px);
   transition:
@@ -710,12 +711,17 @@ main,
   border-color: var(--accent-border);
 }
 
+.skill-card:hover .skill-tags li {
+  color: var(--ink-mid);
+}
+
 .skill-card h4 {
   margin: 0 0 0.75rem;
   padding-bottom: 0.55rem;
   border-bottom: 2px solid var(--accent);
   font-size: 1rem;
   font-weight: 600;
+  color: var(--ink);
 }
 
 .skill-tags {
@@ -729,14 +735,30 @@ main,
 
 .skill-tags li {
   padding: 0.4rem 0.65rem;
-  border: 1px solid var(--line-soft);
+  border: 1px solid var(--line);
   border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--ink-soft);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.02em;
   line-height: 1.3;
+  cursor: default;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.skill-tags li:hover,
+.skill-card:hover .skill-tags li:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-border);
+  background: var(--accent-glow);
+  color: var(--accent);
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.14);
 }
 
 .fun-list {
@@ -1168,7 +1190,9 @@ main,
   .btn:hover,
   .btn:focus-visible,
   .system-card:hover,
-  .system-card:focus-within {
+  .system-card:focus-within,
+  .skill-card:hover,
+  .skill-tags li:hover {
     transform: none;
   }
 }

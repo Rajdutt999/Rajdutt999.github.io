@@ -109,6 +109,14 @@ tabs.forEach((tab, index) => {
   });
 });
 
+document.querySelectorAll("[data-tab][href^='#']").forEach((link) => {
+  link.addEventListener("click", () => {
+    const tabName = link.getAttribute("data-tab");
+    const tab = document.querySelector(`.profile-tabs [data-tab="${tabName}"]`);
+    if (tab) activateTab(tab);
+  });
+});
+
 document.querySelectorAll('.project-links a[href^="#"], .system-card-link[href="#profile"], .system-card-icon[href="#profile"]').forEach((link) => {
   link.addEventListener("click", () => {
     const projectsTab = document.getElementById("tab-projects");
