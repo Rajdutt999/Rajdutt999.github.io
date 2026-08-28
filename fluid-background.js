@@ -93,15 +93,15 @@
       float swirl = length(q) * 0.22 + length(r) * 0.12;
 
       float hue = fract(f * 0.75 + swirl + t * 0.08 + p.x * 0.06);
-      float sat = 0.72 + 0.18 * sin(t + f * 6.28318);
-      float val = 0.82 + 0.12 * f;
+      float sat = 0.65 + 0.2 * sin(t + f * 6.28318);
+      float val = 0.52 + 0.18 * f;
 
       vec3 col = hsv2rgb(vec3(hue, sat, val));
 
       vec2 centered = uv - 0.5;
       centered.x *= u_aspect;
-      float vignette = 1.0 - dot(centered, centered) * 0.55;
-      col *= clamp(vignette, 0.55, 1.0);
+      float vignette = 1.0 - dot(centered, centered) * 0.72;
+      col *= clamp(vignette, 0.32, 1.0);
 
       gl_FragColor = vec4(col, 1.0);
     }
