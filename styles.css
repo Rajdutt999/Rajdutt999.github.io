@@ -200,7 +200,7 @@ main,
 
 .hero-watermark {
   position: absolute;
-  left: clamp(-1rem, -2vw, 0);
+  inset-inline: 0;
   bottom: -0.15em;
   margin: 0;
   font-family: var(--font-body);
@@ -208,6 +208,7 @@ main,
   font-size: clamp(5.5rem, 22vw, 14rem);
   line-height: 0.8;
   letter-spacing: -0.06em;
+  text-align: right;
   color: rgba(255, 255, 255, 0.04);
   pointer-events: none;
   user-select: none;
