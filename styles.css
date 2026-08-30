@@ -256,6 +256,51 @@ main,
   max-width: none;
 }
 
+.hero-bio {
+  margin-bottom: 0.25rem;
+}
+
+.hero-bio .lab-tag {
+  margin-bottom: 0.75rem;
+}
+
+.hero-bio-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 36rem;
+}
+
+.hero-bio-tags li {
+  padding: 0.48rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--ink-mid);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  cursor: default;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hero-bio-tags li:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-border);
+  background: var(--accent-glow);
+  color: var(--accent);
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.14);
+}
+
 .lab-tag {
   margin: 0 0 0.85rem;
   font-family: var(--font-mono);
@@ -1192,7 +1237,8 @@ main,
   .system-card:hover,
   .system-card:focus-within,
   .skill-card:hover,
-  .skill-tags li:hover {
+  .skill-tags li:hover,
+  .hero-bio-tags li:hover {
     transform: none;
   }
 }
